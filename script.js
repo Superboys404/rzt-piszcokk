@@ -1,6 +1,7 @@
 const menuData = [
   { name: "Piscok", price: 10000, img: "https://i.imgur.com/Nh2x0fZ.jpeg" },
-  { name: "Matcha Latte", price: 7000, img: "https://i.imgur.com/3FKM86V.jpeg" }
+  { name: "Matcha Latte", price: 7000, img: "https://i.imgur.com/3FKM86V.jpeg" },
+  { name: "hot chocolate🤤", price: 8000, img: "https://i.imgur.com/7ugSnPj.jpeg" }
 ];
 
 const menuContainer = document.getElementById("menu");
