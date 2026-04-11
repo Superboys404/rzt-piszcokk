@@ -75,21 +75,6 @@ header {
   letter-spacing: 1px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  header {
-    height: 90px;
-  }
-
-  .brand img {
-    max-height: 55px;
-  }
-
-  .brand span {
-    font-size: 14px;
-  }
-}
-
 header img {
   max-height: 50px;
   width: auto;
@@ -207,5 +192,17 @@ button {
   .cart {
     width: 90%;
     right: 5%;
+  }
+  
+  header {
+    height: 90px;
+  }
+
+  .brand img {
+    max-height: 55px;
+  }
+
+  .brand span {
+    font-size: 14px;
   }
 }
