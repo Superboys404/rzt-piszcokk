@@ -158,7 +158,7 @@ button {
   bottom: 15px;
   width: 280px;
 
-  max-height: 45vh; /* BATAS TINGGI */
+  max-height: 35vh; /* BATAS TINGGI */
   overflow: hidden;
 
   display: flex;
