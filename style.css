@@ -1,211 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --primary: #00cfff;
-  --secondary: #009dff;
-  --bg: #f4faff;
-  --text: #0f172a;
-  --card: rgba(255, 255, 255, 0.9);
+  --primary:#00cfff; --secondary:#009dff;
+  --bg:#f4faff; --text:#0f172a;
+  --card:rgba(255,255,255,.9);
 }
 
-/* DARK MODE */
-body.dark {
-  --bg: #0b1220;
-  --text: #e0f2fe;
-  --card: rgba(17, 24, 39, 0.9);
-}
+body.dark { --bg:#0b1220; --text:#e0f2fe; --card:rgba(17,24,39,.9); }
 
-/* GLOBAL */
-* {
-  box-sizing: border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg); color:var(--text);
+  overflow-x:hidden;
 }
 
 /* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 110px;
-  padding: 10px 20px;
-
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
+header{
+  position:sticky;top:0;z-index:1000;
+  display:flex;justify-content:center;align-items:center;
+  height:100px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  box-shadow:0 4px 20px rgba(0,207,255,.3);
 }
 
-/* WRAPPER BRAND */
-.brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+.brand{display:flex;flex-direction:column;align-items:center}
+
+.brand img{
+  max-height:70px;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.3));
 }
 
-/* LOGO DIPERBESAR */
-.brand img {
-  max-height: 70px;
-  width: auto;
-  object-fit: contain;
-
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-  transition: 0.3s;
+.brand span{
+  color:#fff;font-size:15px;font-weight:600;
 }
 
-.brand img:hover {
-  transform: scale(1.08);
+/* CONTAINER */
+.container{
+  max-width:1200px;margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;padding:20px 20px 120px;
 }
 
-/* TEXT ATIRI */
-.brand span {
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  letter-spacing: 1px;
+/* CARD */
+.card{
+  display:flex;flex-direction:column;
+  background:var(--card);
+  border-radius:16px;overflow:hidden;
+  min-height:260px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  header {
-    height: 90px;
-  }
-
-  .brand img {
-    max-height: 55px;
-  }
-
-  .brand span {
-    font-size: 14px;
-  }
+.card img{
+  width:100%;height:150px;object-fit:cover;
 }
 
-header img {
-  max-height: 50px;
-  width: auto;
-  object-fit: contain;
-}
+.card-content{padding:10px}
 
-/* CONTAINER (FIX UTAMA) */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.card h3{font-size:15px;margin-bottom:5px}
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-
-  gap: 20px;
-  padding: 20px;
-  padding-bottom: 120px;
-}
-
-/* CARD (DIPAKSA STABIL) */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background: var(--card);
-  backdrop-filter: blur(12px);
-
-  border-radius: 16px;
-  overflow: hidden;
-
-  min-height: 280px;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* GAMBAR FIX */
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-/* ISI */
-.card-content {
-  padding: 10px;
-}
-
-.card h3 {
-  margin: 0 0 5px;
-  font-size: 16px;
-}
-
-.card p {
-  margin: 0 0 10px;
-  font-size: 14px;
-  color: #6b7280;
-}
+.card p{font-size:13px;color:#6b7280;margin-bottom:10px}
 
 /* BUTTON */
-button {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border: none;
-  color: white;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
+button{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  border:0;color:#fff;padding:8px;border-radius:8px;
 }
 
 /* CART */
-.cart {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  width: 300px;
-  max-height: 70vh;
-
-  display: flex;
-  flex-direction: column;
-
-  background: var(--card);
-  backdrop-filter: blur(15px);
-
-  border-radius: 16px;
-  padding: 15px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  z-index: 999;
+.cart{
+  position:fixed;right:15px;bottom:15px;
+  width:280px;max-height:70vh;
+  display:flex;flex-direction:column;
+  background:var(--card);
+  border-radius:16px;padding:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-/* LIST */
-#cart-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  overflow-y: auto;
-  max-height: 200px;
-  font-size: 14px;
+#cart-list{
+  list-style:none;overflow:auto;
+  max-height:200px;font-size:13px;
 }
 
-/* RESPONSIVE FIX */
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-
-  .cart {
-    width: 90%;
-    right: 5%;
-  }
+/* MOBILE */
+@media(max-width:768px){
+  .container{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .cart{width:90%;right:5%}
 }
