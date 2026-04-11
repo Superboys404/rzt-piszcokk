@@ -25,13 +25,43 @@ body {
 
 /* HEADER */
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-weight: 600;
   box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+/* LOGO */
+header img {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+
+  transition: 0.3s ease;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+/* HOVER EFFECT (biar keliatan hidup) */
+header img:hover {
+  transform: scale(1.08);
+}
+
+/* RESPONSIVE (biar gak kegedean di HP) */
+@media (max-width: 480px) {
+  header {
+    height: 70px;
+  }
+
+  header img {
+    max-height: 40px;
+  }
 
 /* CONTAINER */
 .container {
