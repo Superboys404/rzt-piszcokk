@@ -9,10 +9,8 @@ const menuContainer = document.getElementById("menu");
 const cartList = document.getElementById("cart-list");
 const totalPrice = document.getElementById("total-price");
 
-/* 🔥 UBAH KE OBJECT */
 let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-/* RENDER MENU */
 function renderMenu() {
   menuData.forEach((item, index) => {
     const card = document.createElement("div");
@@ -31,7 +29,6 @@ function renderMenu() {
   });
 }
 
-/* TAMBAH PRODUK (PAKAI QTY) */
 function addToCart(index) {
   const item = menuData[index];
 
@@ -48,14 +45,12 @@ function addToCart(index) {
   updateCart();
 }
 
-/* HAPUS ITEM (1 PRODUK LANGSUNG HAPUS) */
 function removeItem(name) {
   delete cart[name];
   saveCart();
   updateCart();
 }
 
-/* RENDER CART */
 function updateCart() {
   cartList.innerHTML = "";
   let total = 0;
@@ -78,12 +73,10 @@ function updateCart() {
   totalPrice.textContent = total;
 }
 
-/* SIMPAN */
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-/* CHECKOUT */
 function checkout() {
   const keys = Object.keys(cart);
 
@@ -109,6 +102,5 @@ function checkout() {
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 
-/* INIT */
 renderMenu();
 updateCart();
