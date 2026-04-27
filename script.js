@@ -1,4 +1,5 @@
-const menuData = [
+const menuData = [
+
   { name: "Pisang Berendam", price: 8000, img: "https://i.imgur.com/dm3UsN2.jpeg" },
   { name: "Matcha Latte", price: 7000, img: "https://i.imgur.com/3FKM86V.jpeg" },
   { name: "choco drink", price: 8000, img: "https://i.imgur.com/VVin49p.png" }
@@ -97,7 +98,7 @@ function checkout() {
 
   message += `Total: Rp ${total}`;
 
-  const phone = "62895327197215";
+  const phone = "+6283162695997";
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 
